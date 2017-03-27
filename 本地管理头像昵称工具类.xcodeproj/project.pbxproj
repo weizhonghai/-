@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02E53C0B1E8964D80004399A /* ManagerMember.m in Sources */ = {isa = PBXBuildFile; fileRef = 02E53C0A1E8964D80004399A /* ManagerMember.m */; };
 		229C69441E89125E00CC6C80 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 229C69431E89125E00CC6C80 /* main.m */; };
 		229C69471E89125E00CC6C80 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 229C69461E89125E00CC6C80 /* AppDelegate.m */; };
 		229C694A1E89125E00CC6C80 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 229C69491E89125E00CC6C80 /* ViewController.m */; };
@@ -17,7 +18,6 @@
 		229C69681E89126000CC6C80 /* ___________UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 229C69671E89126000CC6C80 /* ___________UITests.m */; };
 		229C69771E89171B00CC6C80 /* LocalManagement.m in Sources */ = {isa = PBXBuildFile; fileRef = 229C69761E89171B00CC6C80 /* LocalManagement.m */; };
 		229C697F1E8917E700CC6C80 /* NSObject+HKExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 229C697E1E8917E700CC6C80 /* NSObject+HKExtension.m */; };
-		229C69821E89182800CC6C80 /* MemberModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 229C69811E89182800CC6C80 /* MemberModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		02E53C091E8964D80004399A /* ManagerMember.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManagerMember.h; sourceTree = "<group>"; };
+		02E53C0A1E8964D80004399A /* ManagerMember.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManagerMember.m; sourceTree = "<group>"; };
 		229C693F1E89125D00CC6C80 /* 本地管理头像昵称工具类.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "本地管理头像昵称工具类.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		229C69431E89125E00CC6C80 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		229C69451E89125E00CC6C80 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -58,8 +60,6 @@
 		229C69761E89171B00CC6C80 /* LocalManagement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalManagement.m; sourceTree = "<group>"; };
 		229C697D1E8917E700CC6C80 /* NSObject+HKExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+HKExtension.h"; sourceTree = "<group>"; };
 		229C697E1E8917E700CC6C80 /* NSObject+HKExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+HKExtension.m"; sourceTree = "<group>"; };
-		229C69801E89182800CC6C80 /* MemberModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemberModel.h; sourceTree = "<group>"; };
-		229C69811E89182800CC6C80 /* MemberModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemberModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,8 +116,8 @@
 				229C69491E89125E00CC6C80 /* ViewController.m */,
 				229C69751E89171B00CC6C80 /* LocalManagement.h */,
 				229C69761E89171B00CC6C80 /* LocalManagement.m */,
-				229C69801E89182800CC6C80 /* MemberModel.h */,
-				229C69811E89182800CC6C80 /* MemberModel.m */,
+				02E53C091E8964D80004399A /* ManagerMember.h */,
+				02E53C0A1E8964D80004399A /* ManagerMember.m */,
 				229C694B1E89125E00CC6C80 /* Main.storyboard */,
 				229C694E1E89125E00CC6C80 /* Assets.xcassets */,
 				229C69501E89125E00CC6C80 /* LaunchScreen.storyboard */,
@@ -301,8 +301,8 @@
 			files = (
 				229C69771E89171B00CC6C80 /* LocalManagement.m in Sources */,
 				229C694A1E89125E00CC6C80 /* ViewController.m in Sources */,
+				02E53C0B1E8964D80004399A /* ManagerMember.m in Sources */,
 				229C69471E89125E00CC6C80 /* AppDelegate.m in Sources */,
-				229C69821E89182800CC6C80 /* MemberModel.m in Sources */,
 				229C69441E89125E00CC6C80 /* main.m in Sources */,
 				229C697F1E8917E700CC6C80 /* NSObject+HKExtension.m in Sources */,
 			);
@@ -542,6 +542,7 @@
 				229C696E1E89126100CC6C80 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		229C696F1E89126100CC6C80 /* Build configuration list for PBXNativeTarget "本地管理头像昵称工具类Tests" */ = {
 			isa = XCConfigurationList;
@@ -550,6 +551,7 @@
 				229C69711E89126100CC6C80 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		229C69721E89126100CC6C80 /* Build configuration list for PBXNativeTarget "本地管理头像昵称工具类UITests" */ = {
 			isa = XCConfigurationList;
@@ -558,6 +560,7 @@
 				229C69741E89126100CC6C80 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

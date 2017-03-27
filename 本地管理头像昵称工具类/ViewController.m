@@ -30,6 +30,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+//    1490630565
+    CGFloat time = [@"1490630565" doubleValue];
+    NSDate *detaildate=[NSDate dateWithTimeIntervalSince1970:time];
+    //实例化一个NSDateFormatter对象
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    //设定时间格式,这里可以设置成自己需要的格式
+    [dateFormatter setDateFormat:@"yyyy.MM.dd HH:mm:ss z"];
+    NSString * str1 = [dateFormatter stringFromDate: detaildate];
+    NSLog(@"%@",str1);
 }
 
 
