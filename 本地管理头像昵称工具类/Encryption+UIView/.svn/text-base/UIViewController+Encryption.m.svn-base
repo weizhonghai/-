@@ -1,0 +1,44 @@
+//
+//  UIViewController+Encryption.m
+//  ZHSecondNetease
+//
+//  Created by 海神 on 2017/1/7.
+//  Copyright © 2017年 海神. All rights reserved.
+//
+
+#import "UIViewController+Encryption.h"
+#import "MD5Encrypted.h"
+
+
+@implementation UIViewController (Encryption)
+- (NSString *)generateURLZH:(NSDictionary *)dic URL:(NSString *)URL{
+    static NSString *str;
+    str = @"";
+    NSArray *arr = [[[[dic allKeys] sortedArrayUsingSelector:@selector(compare:)] reverseObjectEnumerator] allObjects];
+    NSString * md5String=@"";
+    for (int i = 0 ; i < arr.count; i++) {
+        md5String = [md5String stringByAppendingString:dic[arr[i]]];
+    }
+    md5String = [md5String stringByAppendingString:@"955565BE7C42D3DC"];
+    [dic enumerateKeysAndObjectsUsingBlock:^(NSString * key, NSString * obj, BOOL * _Nonnull stop) {
+        str = [str stringByAppendingString:[NSString stringWithFormat:@"&%@=%@",key,obj]];
+    }];
+    NSString *url = [NSString stringWithFormat:@"%@?Token=%@%@",URL,[[MD5Encrypted md5:md5String] uppercaseString],str];
+    url = [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    return url;
+}
+- (NSString *)ZH_token:(NSDictionary *)dic{
+    static NSString *str;
+    str = @"";
+    NSArray *arr = [[[[dic allKeys] sortedArrayUsingSelector:@selector(compare:)] reverseObjectEnumerator] allObjects];
+    NSString * md5String=@"";
+    for (int i = 0 ; i < arr.count; i++) {
+        if ([dic[arr[i]] isKindOfClass:[NSData class]]) {
+            continue;
+        }
+        md5String = [md5String stringByAppendingString:dic[arr[i]]];
+    }
+    md5String = [md5String stringByAppendingString:@"955565BE7C42D3DC"];
+    return [[MD5Encrypted md5:md5String] uppercaseString];
+}
+@end

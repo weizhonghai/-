@@ -1,0 +1,14 @@
+//
+//  UIViewController+Encryption.h
+//  ZHSecondNetease
+//
+//  Created by 海神 on 2017/1/7.
+//  Copyright © 2017年 海神. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@interface UIViewController (Encryption)
+- (NSString *)generateURLZH:(NSDictionary *)dic URL:(NSString *)URL;
+- (NSString *)ZH_token:(NSDictionary *)dic;
+@end
