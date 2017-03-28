@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-
+#import "ManagerMember.h"
 @interface ViewController ()
 
 @end
@@ -29,19 +29,36 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-//    1490630565
-    CGFloat time = [@"1490630565" doubleValue];
-    NSDate *detaildate=[NSDate dateWithTimeIntervalSince1970:time];
-    //实例化一个NSDateFormatter对象
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    //设定时间格式,这里可以设置成自己需要的格式
-    [dateFormatter setDateFormat:@"yyyy.MM.dd HH:mm:ss z"];
-    NSString * str1 = [dateFormatter stringFromDate: detaildate];
-    NSLog(@"%@",str1);
+//    ManagerMember *model = [ManagerMember unarchive];
+//    [model archive];
+    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+    [self.view addSubview:btn];
+    btn.backgroundColor = [UIColor blackColor];
+    [btn addTarget:self action:@selector(btn:) forControlEvents:UIControlEventTouchUpInside];
 }
 
+- (void)btn:(UIButton *)sender{
+    MemberData *data = [ManagerMember queryWithId:@"13545768888"];
+    NSLog(@"%@\n%@\n%@",data.timestamp,data.icon,data.nickname);
+}
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    MemberData *data = [[MemberData alloc] initWithNickName:@"黎明11" icon:@"cxddx" timestamp:@"1490630567"];
+    MemberResult *model = [[MemberResult alloc] initWithId:@"13545768888" MemberData:data];
+
+    [ManagerMember AddMemberData:model];
+    NSLog(@"%@",NSHomeDirectory());
+}
+
+////    1490630565
+//    CGFloat time = [@"1490630565" doubleValue];
+//    NSDate *detaildate=[NSDate dateWithTimeIntervalSince1970:time];
+//    //实例化一个NSDateFormatter对象
+//    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+//    //设定时间格式,这里可以设置成自己需要的格式
+//    [dateFormatter setDateFormat:@"yyyy.MM.dd HH:mm:ss z"];
+//    NSString * str1 = [dateFormatter stringFromDate: detaildate];
+//    NSLog(@"%@",str1);
 
 
 

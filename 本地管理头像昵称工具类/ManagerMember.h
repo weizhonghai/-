@@ -53,10 +53,13 @@
  */
 @property (nonatomic, strong) MemberData *data;
 
+- (instancetype)initWithId:(NSString *)id MemberData:(MemberData *)data;
+
 @end
 
 @interface MemberData : NSObject
 
+- (instancetype)initWithNickName:(NSString *)nickname icon:(NSString *)icon timestamp:(NSString *)timestamp;
 /**
  昵称
  */
